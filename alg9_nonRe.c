@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #define MAXSIZE 8
-int main_1()
+int main()
 {
     int a[MAXSIZE], tmp;
     printf("Enter your array enter\n");
