@@ -8,20 +8,11 @@ int main()
     for(int i=0; i<MAXSIZE; i++){
         scanf("%d", &a[i]);
     }
-    /*for(int i=0; i<MAXSIZE; i++){
+    for(int i=0; i<MAXSIZE; i++){
         if (a[i] > 0 && a[i+1]<0){
             tmp=a[i];
             a[i]=a[i+1];
             a[i+1]=tmp;
-            i=i-2;
-        }
-    }*/
-    int i=0;
-    while(++i<=MAXSIZE){
-        if (a[i-1] > 0 && a[i] < 0){
-            tmp= a[i-1];
-            a[i-1]=a[i];
-            a[i]=tmp;
             i-=2;
         }
     }
