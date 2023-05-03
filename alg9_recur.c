@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
 #define MAXSIZE 8
+void separatePosNeg(int a[],int l,int r);
 int main()
 {
-    int a[MAXSIZE], tmp;
+    int a[MAXSIZE];
     printf("Enter your array enter\n");
     for(int i=0; i<MAXSIZE; i++){
         scanf("%d", &a[i]);
@@ -16,17 +16,14 @@ int main()
 }
 void separatePosNeg(int a[],int l,int r){
     if (l==r)
-        return 0;
-    else{
-        separatePosNeg(a, l, floor((l+r)/2));
-        separatePosNeg(a, floor((l+r)/2)+1, r);
-        for(int i=0; i< r;i++){
-            if (a[i] > 0&& a[i+1] < 0){
-                int tmp= a[i];
-                a[i]=a[i+1];
-                a[i+1]=tmp;
-                i=i-2;
-            }
-        }
+        return;
+    if (a[l]>0 && a[l+1]<0 && l>=0){
+        int tmp=a[l];
+        a[l]=a[l+1];
+        a[l+1]=tmp;
+        separatePosNeg(a, l-1, r);
+    }
+    else {
+        separatePosNeg(a, l+1, r);
     }
 }
