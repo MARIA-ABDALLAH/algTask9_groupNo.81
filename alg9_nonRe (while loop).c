@@ -9,7 +9,7 @@ int main()
         scanf("%d", &a[i]);
     }
     int i=0;
-    while(++i<=MAXSIZE){
+    while(++i<MAXSIZE){
         if (a[i-1] > 0 && a[i] < 0){
             tmp= a[i-1];
             a[i-1]=a[i];
