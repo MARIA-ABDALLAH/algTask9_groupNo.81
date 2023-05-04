@@ -15,7 +15,7 @@ int main()
     return 0;
 }
 void separatePosNeg(int a[],int l,int r){
-    if (l==r)
+    if (l>r)
         return;
     if (a[l]>0 && a[l+1]<0 && l>=0){
         int tmp=a[l];
